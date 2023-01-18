@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChannelList, useChatContext } from 'stream-chat-react';
-import {ChannelSearch, TeamChannelList, TeamChanelPreview} from './';
+import {ChannelSearch, TeamChannelList, TeamChannelPreview} from './';
 import Cookies from 'universal-cookie';
 import StudyIcon from '../assets/study.png';
 import LogoutIcon from '../assets/logout.png';
@@ -44,7 +44,7 @@ function ChannelListContainer(){
               />
             )}
             Preview={(previewProps) =>(
-              <TeamChanelPreview 
+              <TeamChannelPreview 
               {...previewProps}
               type="team" 
               />
@@ -61,7 +61,7 @@ function ChannelListContainer(){
               />
             )}
             Preview={(previewProps) =>(
-              <TeamChanelPreview 
+              <TeamChannelPreview 
               {...previewProps}
               type="messaging"
               />
