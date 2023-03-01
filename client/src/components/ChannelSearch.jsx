@@ -8,7 +8,7 @@ function ChannelSearch() {
     const [loading,setLoading]=useState(false);
     const getChannels = async (text) =>{
         try{
-            // todo : ftech channel
+            // todo : fetch channel
         }catch(error){
             setQuery('')
         }

@@ -25,10 +25,6 @@ function Auth() {
         
     }
 
-    const switchMode = () =>{
-        setIsSignup((prevIsSignup) => !prevIsSignup);
-    }
-
     const handleSubmit = async (e) =>{
         e.preventDefault();
 
@@ -37,7 +33,7 @@ function Auth() {
         const URL= 'http://localhost:5000/auth';
 
         const { data : {token , userId, hashedPassword }} = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`,{
-            username, password, fullName, phoneNumber, avatarURL
+            username, password, fullName: form.fullName, phoneNumber, avatarURL
         });
 
         cookies.set('token', token);
@@ -53,7 +49,10 @@ function Auth() {
         
         window.location.reload();
     }
-
+    
+    const switchMode = () =>{
+        setIsSignup((prevIsSignup) => !prevIsSignup);
+    }
   return (
     <div className='auth__form-container'>
         <div className='auth__form-container_fields'>
